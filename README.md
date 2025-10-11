@@ -7,7 +7,6 @@
 ![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express)
 
 A **full-stack web application** built with React (frontend) and Node.js + Express (backend) to order your favorite meals.
-
 Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the header to checkout - all in one modern responsive interface.
 
 ## 🚀 Features
@@ -15,12 +14,12 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 ### Frontend
 
 - 🛒 Cart system with add/remove/clear (global state via `CartContext` + `useReducer`)
-- 🧾 Checkout flow (form + validation, modal UX) via `UserProgressContext` with `useReducer`
+- 🧾 Checkout flow (form + validation, modal UX) via global state `UserProgressContext` with `useReducer`
 - 📡 `useHttp` custom hook for HTTP requests with loading & error states and request cancellation
 - ♻️ Reusable UI components: Modal (portal), Button, Input, Error, CartItem, MealItem
 - 🔁 Memoization & performance optimizations (`useMemo`for stable contexts' values)
-- ✅ Loading / Error / Success UI states
-- 📱 Responsive layout (mobile / tablet / desktop)
+- ✅ Loading/Error/Success UI states
+- 📱 Responsive layout (mobile/tablet/desktop)
 - ⚙️ Easy to extend (promo rules, auth, saved orders)
 
 ### Backend
@@ -47,7 +46,7 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 
 ### 🏗️ Custom Architecture & Patterns
 
-- **Custom hook**: `useHttp` reusable hook for handling HTTP requests (GET, POST, PUT, DELETE methods) with built-in loading states, error handling, and request cancellation.
+- **Custom hook**: `useHttp` reusable hook for handling HTTP requests (GET, POST, PUT, DELETE methods) with built-in loading state, error handling, and request cancellation.
 - **Performance Memoization** by using `useMemo` to memoize the contexts' values
 
 ### 🛠️ Backend (Full-stack version)
@@ -70,10 +69,10 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
   - ✅ Supports **GET**, **POST**, **PUT**, and **DELETE** methods
   - ⚙️ Handles `isLoading`, `error`, and `data` states automatically
   - 🚫 Uses `AbortController` to **cancel ongoing requests** when the component unmounts or before starting a new one
-  - ♻️ Can be reused across multiple components by simply passing a `url` and a `config`
+  - ♻️ Can be reused across multiple components by simply passing a `url`, a `config`, and optionally a `initialData`
   - 🔁 Automatically triggers requests for `GET` methods on mount
   - 🔁 **Non-GET** requests require manual calling of `sendRequest()`
-  - 🔒 Prevents race conditions & ensures only the latest request updates state
+  - 🔒 Prevents race conditions & ensures only the latest request updates states
 - **Hook API**:
 ```javascript
 const { data, isLoading, error, sendRequest, clearData } = useHttp(
@@ -95,7 +94,7 @@ const {
 } = useHttp("http://localhost:3000/meals", requestConfig, []);
 
 //-----------------------------------------------------------
-//Manual POST Request when the user submit the checkout's form in Checkout.jsx
+//Manual POST Request when the user submits the form's checkout in Checkout.jsx
 const requestConfig = {
   method: "POST",
   headers: {
@@ -110,7 +109,7 @@ const {
   clearData,
 } = useHttp("http://localhost:3000/orders", requestConfig);
 
-//somewhere in code, ex: To be executed only when form submits
+//somewhere in code
 sendRequest(orderData);
 
 ```
@@ -198,10 +197,10 @@ npm start
 
 1. Browse meals on the main page.
 2. Click Add to Cart to add items (Cart updates with quantity and total price).
-3. Click Cart (N) in header to open the cart modal.
+3. Click Cart (N) in the header to open the cart modal.
 4. Review items, change quantities(increase/decrease), or go to Checkout.
 5. Fill the form and submit.
-6. On success, cart clears and success modal shows.
+6. On success, the cart clears and the success modal shows.
 
 ---
 
