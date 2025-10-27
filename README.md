@@ -6,7 +6,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-339933?logo=node.js)
 ![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express)
 
-A **full-stack web application** built with React (frontend) and Node.js + Express (backend) to order your favorite meals.
+A **full-stack web application** built with **React** (frontend) and Node.js + Express (backend) to order your favorite meals.
 Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the header to checkout - all in one modern responsive interface.
 
 ## 🚀 Features
@@ -22,12 +22,14 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 - 📱 Responsive layout (mobile/tablet/desktop)
 - ⚙️ Easy to extend (promo rules, auth, saved orders)
 
+<br>
+
 ### Backend
 
-- 🔌 Simple REST API for meals & orders (Node + Express)
-- 📂 JSON file storage (easy to replace with DB)
-- ✅ Endpoints for fetching meals and posting orders
-- 🔁 Ready to extend with DB, auth, or cloud deployment
+- 🔌 **Prebuilt REST API** for meals & orders, powered by **Node.js + Express**
+- 📂 **JSON file storage** used for simplicity — easily replaceable with a database
+- ✅ Provides endpoints for fetching meals and posting orders
+- 🔁 **Integration-ready** architecture, extendable with authentication, database, or cloud deployment
 
 ---
 
@@ -44,12 +46,16 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 - **CSS3/Styling**
 - **Vite** (for development and build)
 
+<br>
+
 ### 🏗️ Custom Architecture & Patterns
 
 - **Custom hook**: `useHttp` reusable hook for handling HTTP requests (GET, POST, PUT, DELETE methods) with built-in loading state, error handling, and request cancellation.
 - **Performance Memoization** by using `useMemo` to memoize the contexts' values
 
-### 🛠️ Backend (Full-stack version)
+<br>
+
+### 🛠️ Backend
 
 - Node.js
 - Express.js for creating REST API endpoints
@@ -178,6 +184,8 @@ npm run dev
 ```
 
 **Note**: The frontend will run on http://localhost:5173
+
+<br>
 
 ### Running Backend
 
