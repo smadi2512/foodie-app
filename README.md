@@ -6,7 +6,7 @@
 ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-339933?logo=node.js)
 ![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express)
 
-A **full-stack web application** built with **React** (frontend) and Node.js + Express (backend) to order your favorite meals.
+A **full-stack web application** built with **React** (frontend) and Node.js + Express (backend) to **order your favorite meals**.
 
 Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the header to checkout — all in one modern responsive interface.
 
@@ -67,7 +67,7 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 
 ### 📘 `useHttp` custom hook
 
-- **`useHttp` Hook**: Production-ready handles HTTP requests (GET, POST, PUT, DELETE methods) with loading state, error handling, request cancellation, and reusable architecture.
+- **Explanation**: `useHttp` is a production-ready hook that handles HTTP requests (GET, POST, PUT, DELETE methods) with loading state, error handling, request cancellation, and reusable architecture.
 - **Used in**: Checkout.jsx (to `POST` orders), Meals.jsx (to `GET` meals)
 - **Benefits**: Prevents memory leaks, reduces code duplication, improves maintainability
 - **Code**: [frontend/src/hooks/useHttp.js](https://github.com/smadi2512/foodie-app/tree/master/frontend/src/hooks/useHttp.js)
@@ -76,11 +76,10 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
   - Handles **`isLoading`, `error`, and `data` states** automatically
   - Uses **`AbortController`** to **cancel ongoing requests** when the component unmounts or before starting a new one
   - Can be **reused across multiple components** by simply passing a `url`, a `config`, and optionally a `initialData`
-  - Automatically triggers requests for `GET` methods on mount
-  - **Non-GET** requests require manual calling of `sendRequest()`
+  - **Automatically triggers requests for `GET` methods on mount**
+  - **Non-GET** requests require **manual calling of `sendRequest()`**
   - Prevents race conditions & ensures only the latest request updates states
 - **Hook API**:
-
   ```javascript
   const { data, isLoading, error, sendRequest, clearData } = useHttp(
     url,
@@ -123,6 +122,7 @@ sendRequest(orderData);
 ---
 
 ## 📂 Project Structure
+Structured in a modular way to keep the code scalable and maintainable.
 
 ```text
 foodie-app/
@@ -256,12 +256,12 @@ npm start
 
 ## 🧩 Future Improvements
 
-- Authentication & user accounts
-- Orders dashboard (order history)
-- Track client's orders
-- Real database (MongoDB / PostgreSQL)
-- Improved animations (Framer Motion) for modals & cart badge
-- Unit & integration tests (Jest + React Testing Library)
+- **Authentication** & user accounts
+- Orders **dashboard** (order history)
+- **Track client's orders**
+- **Real database** (MongoDB / PostgreSQL)
+- Improved **animations** (Framer Motion) for modals & cart badge
+- **Unit & integration tests** (Jest + React Testing Library)
 
 ---
 
