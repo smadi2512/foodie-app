@@ -1,35 +1,35 @@
 # 🍔 Foodie App
 
 ![React](https://img.shields.io/badge/React-19.2.0-61DAFB?logo=react)
-![Vite](https://img.shields.io/badge/Vite-4.5.14-646CFF?logo=vite)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript)
+![Vite](https://img.shields.io/badge/Vite-4.5.14-646CFF?logo=vite)
 ![Node.js](https://img.shields.io/badge/Node.js-22.14.0-339933?logo=node.js)
 ![Express](https://img.shields.io/badge/Express-4.21.2-000000?logo=express)
 
 A **full-stack web application** built with **React** (frontend) and Node.js + Express (backend) to order your favorite meals.
-Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the header to checkout - all in one modern responsive interface.
+
+Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the header to checkout — all in one modern responsive interface.
 
 ## 🚀 Features
 
 ### Frontend
 
-- 🛒 Cart system with add/remove/clear (global state via `CartContext` + `useReducer`)
-- 🧾 Checkout flow (form + validation, modal UX) via global state `UserProgressContext` with `useReducer`
-- 📡 `useHttp` custom hook for HTTP requests with loading & error states and request cancellation
-- ♻️ Reusable UI components: Modal (portal), Button, Input, Error, CartItem, MealItem
-- 🔁 Memoization & performance optimizations (`useMemo`for stable contexts' values)
-- ✅ Loading/Error/Success UI states
-- 📱 Responsive layout (mobile/tablet/desktop)
-- ⚙️ Easy to extend (promo rules, auth, saved orders)
+- **Shopping cart** with add/remove/clear functionality (via global state `CartContext` with `useReducer`)
+- **Checkout form** with validation & modal UX (via global state `UserProgressContext` with `useReducer`)
+- **`useHttp` custom hook for HTTP requests** with loading & error states and request cancellation
+- **Reusable UI components**: Modal (portal), Button, Input, Error, CartItem, MealItem
+- **Performance optimizations** with `useMemo` for stable contexts' values
+- **Enhanced UX** with loading, error, and success states handling
+- **Fully responsive** layout (mobile/tablet/desktop)
 
 <br>
 
 ### Backend
 
-- 🔌 **Prebuilt REST API** for meals & orders, powered by **Node.js + Express**
-- 📂 **JSON file storage** used for simplicity — easily replaceable with a database
-- ✅ Provides endpoints for fetching meals and posting orders
-- 🔁 **Integration-ready** architecture, extendable with authentication, database, or cloud deployment
+- **Prebuilt REST API** for meals & orders, powered by **Node.js + Express**
+- **JSON file storage** used for simplicity — easily replaceable with a database
+- Provides endpoints for fetching meals and posting orders
+- **Integration-ready** architecture, extendable with authentication, database, or cloud deployment
 
 ---
 
@@ -50,7 +50,7 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 
 ### 🏗️ Custom Architecture & Patterns
 
-- **Custom hook**: `useHttp` reusable hook for handling HTTP requests (GET, POST, PUT, DELETE methods) with built-in loading state, error handling, and request cancellation.
+- **Custom hook**: `useHttp` reusable hook for **handling HTTP requests** (GET, POST, PUT, DELETE methods) with built-in loading state, error handling, and request cancellation.
 - **Performance Memoization** by using `useMemo` to memoize the contexts' values
 
 <br>
@@ -72,23 +72,24 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 - **Benefits**: Prevents memory leaks, reduces code duplication, improves maintainability
 - **Code**: [frontend/src/hooks/useHttp.js](https://github.com/smadi2512/foodie-app/tree/master/frontend/src/hooks/useHttp.js)
 - **Features**:
-  - ✅ Supports **GET**, **POST**, **PUT**, and **DELETE** methods
-  - ⚙️ Handles `isLoading`, `error`, and `data` states automatically
-  - 🚫 Uses `AbortController` to **cancel ongoing requests** when the component unmounts or before starting a new one
-  - ♻️ Can be reused across multiple components by simply passing a `url`, a `config`, and optionally a `initialData`
-  - 🔁 Automatically triggers requests for `GET` methods on mount
-  - 🔁 **Non-GET** requests require manual calling of `sendRequest()`
-  - 🔒 Prevents race conditions & ensures only the latest request updates states
+  - Supports **GET**, **POST**, **PUT**, and **DELETE** methods
+  - Handles **`isLoading`, `error`, and `data` states** automatically
+  - Uses **`AbortController`** to **cancel ongoing requests** when the component unmounts or before starting a new one
+  - Can be **reused across multiple components** by simply passing a `url`, a `config`, and optionally a `initialData`
+  - Automatically triggers requests for `GET` methods on mount
+  - **Non-GET** requests require manual calling of `sendRequest()`
+  - Prevents race conditions & ensures only the latest request updates states
 - **Hook API**:
-```javascript
-const { data, isLoading, error, sendRequest, clearData } = useHttp(
-  url,
-  config,
-  initialData
-);
-```
 
-- **Usage examples in components**:
+  ```javascript
+  const { data, isLoading, error, sendRequest, clearData } = useHttp(
+    url,
+    config,
+    initialData
+  );
+  ```
+
+#### Usage examples in components:
 
 ```javascript
 //GET meals with related states in Meals.jsx
@@ -106,7 +107,7 @@ const requestConfig = {
   headers: {
     "Content-Type": "application/json",
   },
-};//Should be outside the component function
+}; //Should be outside the component function
 const {
   data,
   isLoading: isSending,
@@ -117,8 +118,8 @@ const {
 
 //somewhere in code
 sendRequest(orderData);
-
 ```
+
 ---
 
 ## 📂 Project Structure
@@ -203,11 +204,11 @@ npm start
 
 ## ✅ How to use the app (user flow)
 
-1. Browse meals on the main page.
-2. Click Add to Cart to add items (Cart updates with quantity and total price).
-3. Click Cart (N) in the header to open the cart modal.
+1. **Browse meals** on the main page.
+2. Click **Add to Cart** to add items (Cart updates with quantity and total price).
+3. Click **Cart (N) in the header** to open the cart modal.
 4. Review items, change quantities(increase/decrease), or go to Checkout.
-5. Fill the form and submit.
+5. Fill the **checkout's form and submit**.
 6. On success, the cart clears and the success modal shows.
 
 ---
@@ -255,12 +256,12 @@ npm start
 
 ## 🧩 Future Improvements
 
-- 🔐 Authentication & user accounts
-- 📊 Orders dashboard (order history)
-- 🚚 Track client's orders
-- 💾 Real database (MongoDB / PostgreSQL)
-- 🎨 Improved animations (Framer Motion) for modals & cart badge
-- 🧪 Unit & integration tests (Jest + React Testing Library)
+- Authentication & user accounts
+- Orders dashboard (order history)
+- Track client's orders
+- Real database (MongoDB / PostgreSQL)
+- Improved animations (Framer Motion) for modals & cart badge
+- Unit & integration tests (Jest + React Testing Library)
 
 ---
 
@@ -269,8 +270,8 @@ npm start
 Created by **Walaa Smadi**✨ \
 Passionate React developer building modern, maintainable, scalable, performant, and user-friendly web apps.
 
-- 📧 Email: [walasmadi93@gmail.com](mailto:walasmadi93@gmail.com)
-- 💼 LinkedIn: [Walaa Smadi](https://www.linkedin.com/in/walaa-bilal-smadi/)
-- 🐙 GitHub: [@smadi2512](https://github.com/smadi2512)
+- Email: [walasmadi93@gmail.com](mailto:walasmadi93@gmail.com)
+- LinkedIn: [Walaa Smadi](https://www.linkedin.com/in/walaa-bilal-smadi/)
+- GitHub: [@smadi2512](https://github.com/smadi2512)
 
 Feel free to fork, star ⭐, and contribute!
