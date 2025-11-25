@@ -40,7 +40,7 @@ Browse delicious meals, add/remove items to your cart, click **Cart (N)** in the
 - **React 19.2.0** (hooks: `useState`, `useReducer`, `useRef`, `useEffect`, `useCallback`, `useMemo`)
 - **React Portals** for modal rendering
 - **Context API** with **reducer** for cart and user progress contexts
-- **FormData object** for handling the form's checkout
+- **FormData object** for handling the checkout form
 - **AbortController** for aborting/cancelling HTTP requests
 - **JavaScript (ES6+)**
 - **CSS3/Styling**
@@ -208,7 +208,7 @@ npm start
 2. Click **Add to Cart** to add items (Cart updates with quantity and total price).
 3. Click **Cart (N) in the header** to open the cart modal.
 4. Review items, change quantities(increase/decrease), or go to Checkout.
-5. Fill the **checkout's form and submit**.
+5. Fill the **checkout form and submit**.
 6. On success, the cart clears and the success modal shows.
 
 ---
